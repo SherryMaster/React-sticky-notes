@@ -1,4 +1,5 @@
 import { useAuth } from "./context/AuthContext";
+import NoteProvider from "./context/NoteContext";
 import LoginPage from "./pages/LoginPage";
 import NotesPage from "./pages/NotesPage";
 
@@ -21,7 +22,9 @@ function App() {
           </div>
         </div>
       ) : user ? (
-        <NotesPage />
+        <NoteProvider>
+          <NotesPage />
+        </NoteProvider>
       ) : (
         <LoginPage />
       )}

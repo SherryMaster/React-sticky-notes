@@ -4,11 +4,13 @@ import { useRef, useState, useContext } from "react";
 import { db } from "../appwrite/database";
 import { NoteContext } from "../context/NoteContext";
 import Spinner from "../icons/Spinner";
+import { useAuth } from "../context/AuthContext";
  
 const AddButton = () => {
     const [loading, setLoading] = useState(false)
 
     const { setNotes, setSelectedNote } = useContext(NoteContext);
+    const { user } = useAuth();
 
     const addNote = async () => {
         if (loading) return;
@@ -20,6 +22,7 @@ const AddButton = () => {
                 x: 10, // Default starting position for new notes.
                 y: 10, // Default starting position for new notes.
             }),
+            userId: user.$id, // Add the user ID to the payload.
         }
 
         try {
