@@ -1,4 +1,4 @@
-import { Client, Databases } from "appwrite";
+import { Client, Databases, Account } from "appwrite";
 
 const endpoint = import.meta.env.VITE_APPWRITE_ENDPOINT;
 const projectId = import.meta.env.VITE_APPWRITE_PROJECT_ID;
@@ -10,5 +10,6 @@ const client = new Client()
     .setProject(projectId);
  
 const databases = new Databases(client);
+const account = new Account(client);
  
-export { client, databases, databaseId, collectionNotesId as collectionId };
+export { client, databases, account, databaseId, collectionNotesId as collectionId };

@@ -4,9 +4,9 @@ import Spinner from "../icons/Spinner";
 
 export const NoteContext = createContext();
 
-const NotProvider = ({ children }) => {
+const NoteProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
-  const [selectedNote, setSelectedNote] = useState(null)
+  const [selectedNote, setSelectedNote] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const init = async () => {
@@ -37,7 +37,7 @@ const NotProvider = ({ children }) => {
             height: "100vh",
           }}
         >
-          <Spinner size="100" color="#fff"/>
+          <Spinner size="100" color="#fff" />
         </div>
       ) : (
         children
@@ -46,4 +46,4 @@ const NotProvider = ({ children }) => {
   );
 };
 
-export default NotProvider;
+export default NoteProvider;
