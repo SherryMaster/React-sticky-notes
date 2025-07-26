@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
+import Logo from "../components/Logo";
 
 const LoginPage = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -32,6 +33,9 @@ const LoginPage = () => {
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit} className="login-form">
+        <div className="login-logo">
+          <Logo size={48} variant="blue" className="login-logo-icon" />
+        </div>
         <h2 className="login-title">
           {isLogin ? "Welcome Back" : "Create Account"}
         </h2>

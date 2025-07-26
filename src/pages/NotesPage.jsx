@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { NoteContext } from "../context/NoteContext";
 import Controls from "../components/Controls";
 import { useAuth } from "../context/AuthContext";
+import Logo from "../components/Logo";
 
 const NotesPage = () => {
   const { notes } = useContext(NoteContext);
@@ -11,6 +12,7 @@ const NotesPage = () => {
   return (
     <div>
       <div className="app-header">
+        <Logo size={28} variant="blue" className="app-logo" />
         <span className="welcome-text">Welcome, {user?.name}</span>
         <button onClick={logout} className="logout-button">
           Logout

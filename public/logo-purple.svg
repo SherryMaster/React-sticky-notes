@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Shadow filter for depth -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+    
+    <!-- Purple gradient for note body -->
+    <linearGradient id="noteGradientPurple" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FED0FD"/>
+      <stop offset="100%" stop-color="#FEE5FD"/>
+    </linearGradient>
+    
+    <!-- Purple gradient for folded corner -->
+    <linearGradient id="foldGradientPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8B8F7"/>
+      <stop offset="100%" stop-color="#FED0FD"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Main sticky note body -->
+  <rect x="8" y="12" width="40" height="40" rx="4" ry="4" 
+        fill="url(#noteGradientPurple)" 
+        filter="url(#shadow)"
+        transform="rotate(-8 28 32)"/>
+  
+  <!-- Folded corner -->
+  <path d="M 40 12 L 48 12 L 40 20 Z" 
+        fill="url(#foldGradientPurple)" 
+        transform="rotate(-8 28 32)"/>
+  
+  <!-- Text lines inside the note -->
+  <g transform="rotate(-8 28 32)" stroke="#18181A" stroke-width="1.5" stroke-linecap="round">
+    <line x1="14" y1="22" x2="38" y2="22"/>
+    <line x1="14" y1="28" x2="32" y2="28"/>
+    <line x1="14" y1="34" x2="36" y2="34"/>
+  </g>
+</svg>

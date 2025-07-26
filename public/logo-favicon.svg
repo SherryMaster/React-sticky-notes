@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <!-- Simplified shadow for small sizes -->
+    <filter id="shadowSmall" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0.5" dy="1" stdDeviation="0.8" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+    
+    <!-- Gradient for note body -->
+    <linearGradient id="noteGradientSmall" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9BD1DE"/>
+      <stop offset="100%" stop-color="#A6DCE9"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Main sticky note body - simplified for favicon -->
+  <rect x="4" y="6" width="20" height="20" rx="2" ry="2" 
+        fill="url(#noteGradientSmall)" 
+        filter="url(#shadowSmall)"
+        transform="rotate(-8 14 16)"/>
+  
+  <!-- Folded corner -->
+  <path d="M 20 6 L 24 6 L 20 10 Z" 
+        fill="#7BC4D4" 
+        transform="rotate(-8 14 16)"/>
+  
+  <!-- Single text line for clarity at small size -->
+  <g transform="rotate(-8 14 16)" stroke="#18181A" stroke-width="1" stroke-linecap="round">
+    <line x1="7" y1="14" x2="18" y2="14"/>
+    <line x1="7" y1="18" x2="15" y2="18"/>
+  </g>
+</svg>
