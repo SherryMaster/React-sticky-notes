@@ -30,80 +30,57 @@ const LoginPage = () => {
   };
 
   return (
-    <div style={{ 
-      display: "flex", 
-      justifyContent: "center", 
-      alignItems: "center", 
-      height: "100vh",
-      backgroundColor: "#212228"
-    }}>
-      <form onSubmit={handleSubmit} style={{
-        backgroundColor: "#35363e",
-        padding: "2rem",
-        borderRadius: "8px",
-        width: "300px"
-      }}>
-        <h2 style={{ color: "white", textAlign: "center" }}>
-          {isLogin ? "Login" : "Register"}
+    <div className="login-container">
+      <form onSubmit={handleSubmit} className="login-form">
+        <h2 className="login-title">
+          {isLogin ? "Welcome Back" : "Create Account"}
         </h2>
-        
+
         {!isLogin && (
           <input
             type="text"
-            placeholder="Name"
+            placeholder="Full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            style={{ width: "100%", padding: "0.5rem", margin: "0.5rem 0" }}
+            className="login-input"
           />
         )}
-        
+
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Email Address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ width: "100%", padding: "0.5rem", margin: "0.5rem 0" }}
+          className="login-input"
         />
-        
+
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          style={{ width: "100%", padding: "0.5rem", margin: "0.5rem 0" }}
+          className="login-input"
         />
-        
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        
-        <button 
-          type="submit" 
-          disabled={loading}
-          style={{ 
-            width: "100%", 
-            padding: "0.5rem", 
-            margin: "0.5rem 0",
-            backgroundColor: "#007bff",
-            color: "white",
-            border: "none",
-            borderRadius: "4px"
-          }}
-        >
-          {loading ? "Loading..." : (isLogin ? "Login" : "Register")}
+
+        {error && <p className="login-error">{error}</p>}
+
+        <button type="submit" disabled={loading} className="login-button">
+          {loading ? "Please wait..." : isLogin ? "Sign In" : "Create Account"}
         </button>
-        
-        <p style={{ color: "white", textAlign: "center" }}>
+
+        <div className="login-switch">
           {isLogin ? "Don't have an account? " : "Already have an account? "}
-          <button 
+          <button
             type="button"
             onClick={() => setIsLogin(!isLogin)}
-            style={{ background: "none", border: "none", color: "#007bff", cursor: "pointer" }}
+            className="login-switch-button"
           >
-            {isLogin ? "Register" : "Login"}
+            {isLogin ? "Sign up" : "Sign in"}
           </button>
-        </p>
+        </div>
       </form>
     </div>
   );

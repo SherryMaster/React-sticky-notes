@@ -10,29 +10,9 @@ const NotesPage = () => {
 
   return (
     <div>
-      <div
-        style={{
-          position: "fixed",
-          top: "1rem",
-          right: "1rem",
-          zIndex: 10000,
-          display: "flex",
-          alignItems: "center",
-          gap: "1rem",
-        }}
-      >
-        <span style={{ color: "white" }}>Welcome, {user?.name}</span>
-        <button
-          onClick={logout}
-          style={{
-            padding: "0.5rem 1rem",
-            backgroundColor: "#dc3545",
-            color: "white",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-          }}
-        >
+      <div className="app-header">
+        <span className="welcome-text">Welcome, {user?.name}</span>
+        <button onClick={logout} className="logout-button">
           Logout
         </button>
       </div>
